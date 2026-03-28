@@ -90,21 +90,21 @@
       position: relative; z-index: 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      padding: 2rem 4% 2rem 1rem;
+      gap: 6px;
+      padding: 1.2rem 3% 1.2rem 0.5rem;
     }
     .hero-photos img {
-      width: 100%; border-radius: 6px;
+      width: 100%; border-radius: 5px;
       object-fit: cover; display: block;
       filter: brightness(.88) contrast(1.05);
       transition: filter .3s;
     }
     .hero-photos img:hover { filter: brightness(1) contrast(1.05); }
-    .hero-photos img:nth-child(1) { grid-column: 1; aspect-ratio: 4/3; }
-    .hero-photos img:nth-child(2) { grid-column: 2; aspect-ratio: 4/3; }
-    .hero-photos img:nth-child(3) { grid-column: 1 / 3; aspect-ratio: 16/6; object-position: center 30%; }
-    .hero-photos img:nth-child(4) { grid-column: 1; aspect-ratio: 4/3; }
-    .hero-photos img:nth-child(5) { grid-column: 2; aspect-ratio: 4/3; }
+    .hero-photos img:nth-child(1) { grid-column: 1; aspect-ratio: 3/2; }
+    .hero-photos img:nth-child(2) { grid-column: 2; aspect-ratio: 3/2; }
+    .hero-photos img:nth-child(3) { grid-column: 1 / 3; aspect-ratio: 21/6; object-position: center 30%; }
+    .hero-photos img:nth-child(4) { grid-column: 1; aspect-ratio: 3/2; }
+    .hero-photos img:nth-child(5) { grid-column: 2; aspect-ratio: 3/2; }
     .hero-bg {
       position: absolute; inset: 0;
       background:
@@ -124,7 +124,8 @@
     }
     .hero-content {
       position: relative; z-index: 2;
-      max-width: 680px; padding: 3rem 5% 3rem;
+      max-width: 680px; padding: 1.8rem 5% 1.8rem;
+      align-self: center; margin-top: -1rem;
     }
     .hero-badge {
       display: inline-block;
@@ -165,12 +166,12 @@
     }
     .btn-secondary:hover { border-color: var(--gold); background: rgba(240,192,48,.08); }
     .hero-stats {
-      display: flex; gap: 2rem; margin-top: 1.8rem; z-index: 2;
+      display: flex; gap: 2rem; margin-top: 1.2rem; z-index: 2;
     }
     .stat { text-align: center; }
     .stat-num {
       font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900; font-size: 2.4rem; color: var(--gold); line-height: 1;
+      font-weight: 900; font-size: 2rem; color: var(--gold); line-height: 1;
     }
     .stat-label { font-size: .75rem; color: var(--silver); letter-spacing: .1em; text-transform: uppercase; margin-top: 2px; }
 
@@ -207,24 +208,11 @@
     .section-sub { color: #5a6070; font-size: 1.05rem; line-height: 1.7; max-width: 560px; }
 
     /* ABOUT */
-    #about { background: var(--white); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto;
-    }
-    .about-img-wrap { position: relative; }
-    .about-img-wrap img { width: 100%; border-radius: 4px; box-shadow: 12px 12px 0 var(--gold); }
-    .about-year-badge {
-      position: absolute; top: -1.2rem; right: -1.2rem;
-      background: var(--navy); color: var(--gold);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900; font-size: 1.1rem; letter-spacing: .04em;
-      padding: .8rem 1.2rem; border-radius: 3px; text-align: center; line-height: 1.2;
-    }
-    .about-year-badge span { display: block; font-size: .7rem; color: var(--silver); letter-spacing: .12em; }
-    .about-points { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: .8rem; }
-    .about-points li { display: flex; align-items: flex-start; gap: .8rem; font-size: 1rem; line-height: 1.5; }
-    .about-points li::before { content: '▸'; color: var(--crimson); font-size: 1rem; margin-top: .1rem; flex-shrink: 0; }
+    #about { background: var(--white); padding: 2.5rem 5%; }
+    .about-flat { max-width: 1200px; margin: 0 auto; }
+    .about-points { list-style: none; margin-top: 1rem; display: flex; flex-wrap: wrap; gap: .5rem 2.5rem; }
+    .about-points li { display: flex; align-items: flex-start; gap: .6rem; font-size: .95rem; line-height: 1.5; }
+    .about-points li::before { content: '▸'; color: var(--crimson); flex-shrink: 0; }
 
     /* ENGINES */
     #engines { background: var(--light); }
@@ -420,26 +408,12 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="about-grid">
-    <div class="about-img-wrap">
-      <img src="GASC_-_Catalog_P1.png" alt="GASC Korean Engines" />
-      <div class="about-year-badge">Since<span>1995</span></div>
-    </div>
-    <div>
-      <div class="section-label">Who We Are</div>
-      <h2 class="section-title">Lebanon's <em>Trusted</em><br/>Korean Engine Supplier</h2>
-      <p class="section-sub">
-        GASC Group has been sourcing and supplying premium Korean auto-parts and engines since 1995. We work directly with manufacturers to deliver genuine, factory-sealed parts at competitive wholesale prices — serving garages, auto traders, and workshops across Lebanon.
-      </p>
-      <ul class="about-points">
-        <li>Direct supplier of brand-new Korean engines for Hyundai &amp; Kia vehicles</li>
-        <li>All engines are 0 km mileage — factory original and sealed</li>
-        <li>6-month guarantee on every engine sold</li>
-        <li>Wholesale pricing available for garages and traders</li>
-        <li>Over 30 years of experience in the Lebanese auto market</li>
-        <li>Expert consultation — we'll help you find the right engine</li>
-      </ul>
-    </div>
+  <div class="about-flat">
+    <div class="section-label">Who We Are</div>
+    <h2 class="section-title">Lebanon's <em>Trusted</em> Korean Engine Supplier</h2>
+    <p class="section-sub">
+      GASC Group has been sourcing and supplying premium Korean auto-parts and engines since 1995. As a direct supplier of brand-new Korean engines for Hyundai &amp; Kia vehicles, we work directly with manufacturers to deliver genuine, factory-sealed parts at competitive wholesale prices — serving garages, auto traders, and workshops across Lebanon.
+    </p>
   </div>
 </section>
 
